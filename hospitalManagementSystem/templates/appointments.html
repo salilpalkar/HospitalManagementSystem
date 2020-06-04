@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<title>Appointments</title>
+<body>
+    <br><br><br><br><br><br><br><br>
+    <table border="1px" align="center">
+        <thead>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Consulting Doctor</td>
+            <td>Status</td>
+        </thead>
+        {% for appoint in appoints%}
+        <tr>
+            <td>{{ appoint.date}} </td>
+            <td>{{ appoint.time}} </td>
+            <td>{{ appoint.doctor}} </td>
+            <td>{{ appoint.status}} </td>
+        </tr>
+        {% endfor %}
+</body>
+{% endblock  %}
+

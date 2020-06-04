@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<title>Dashboard</title>
+<body>
+    <br><br><br><br><br><br><br><br>
+    <p> Pending Appointments : {{pending}}</p>
+    <p> Completed Appointments : {{completed}}</p>
+    <table border="1px" align="center">
+        <thead>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Consulting Doctor</td>
+            <td>Username</td>
+            <td>Status</td>
+        </thead>
+        {% for appoint in appoints%}
+        <tr>
+            <td>{{ appoint.date}} </td>
+            <td>{{ appoint.time}} </td>
+            <td>{{ appoint.doctor}} </td>
+            <td>{{ appoint.username}} </td>
+            <td>{{ appoint.status}} </td>
+        </tr>
+        {% endfor %}
+         <p><a href="createappointment" class="btn btn-primary py-3 px-4">Create appointment</a></p>
+</body>
+{% endblock  %}
+

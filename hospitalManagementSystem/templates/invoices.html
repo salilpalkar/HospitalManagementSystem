@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<title>Invoices</title>
+<body>
+    <br><br><br><br><br><br><br><br>
+    <table border="1px" align="center">
+        <thead>
+            <td>Date</td>
+            <td>Paid</td>
+            <td>Outstanding</td>
+        </thead>
+        {% for invoice in invoices%}
+        <tr>
+            <td>{{ invoice.date}} </td>
+            <td>{{ invoice.paid}} </td>
+            <td>{{ invoice.outstanding}} </td>
+            
+        </tr>
+        {% endfor %}
+</body>
+{% endblock  %}
+

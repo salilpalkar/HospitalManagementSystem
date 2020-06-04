@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create appointment</title>
+</head>
+<body>
+    
+   <section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-2 bg-light">
+		<div class="container">
+            <div class="row d-flex">
+	            <div class="col-md-12 py-5">
+		            <div class="col-md-5 d-flex">
+	        	        <div class="appointment-wrap bg-white p-4 p-md-5 d-flex align-items-center">
+		        	        <form action="createappointment" method='post' class="appointment-form ftco-animate">
+                                {% csrf_token %}
+                                <h3>Create Appointment</h3>
+                                <div class="">
+                                    <div class="form-group">
+                                        <input type="text" name = 'date' class="form-control" placeholder="date">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text"  name = 'time' class="form-control" placeholder="time">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name= 'username' class="form-control" placeholder="Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="doctor" class="form-control" placeholder="doctor">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="status" class="form-control" placeholder="status">
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="form-group">
+                                         <input type="submit" value="Create" class="btn btn-secondary py-3 px-4">
+                                    </div>
+                                </div>
+		    		    	</form>
+		    		    </div>
+	                </div>
+		        </div>
+	        </div>
+        </div>
+    </section>
+    <div>
+        {% for message in messages%}
+        <h3>{{message}}</h3>
+        {% endfor %}
+    </div>
+</body>
+</html>
+{% endblock  %}

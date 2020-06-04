@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<title>Appointments</title>
+<body>
+    <br><br><br><br><br><br><br><br>
+    {% for hist in hists%}
+        <H2> {{hist.date}}</H2>
+        <p>Symptoms : {{hist.symptoms}}</p>
+        <p>Prescription : {{hist.prescription}}</p><br><br>
+    {% endfor %}
+</body>
+{% endblock  %}
